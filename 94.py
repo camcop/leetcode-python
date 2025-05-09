@@ -11,15 +11,15 @@ class Solution(object):
         :rtype: List[int]
         """
         
-        traversed = []
+        stack = []
         output = []
         node = root
 
-        while node or traversed:
+        while node or stack:
             while node:
-                traversed.append(node)
+                stack.append(node)
                 node = node.left
-            node = traversed.pop()
+            node = stack.pop()
             output.append(node.val)
             node = node.right
 
